@@ -1,0 +1,10 @@
+extends base.pug
+
+block content 
+    span=errorMessage
+    h3 Welcome Upload Video 
+    form(method="POST")
+        input(name="title", placeholder="Title", required, type="text")
+        input(name="description", placeholder="Description", required, type="text")
+        input(name="hashtags", placeholder="Hashtags, Seperated by commoma", required, type="text")
+        input(type="submit", value="submit") 
