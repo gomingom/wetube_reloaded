@@ -3,7 +3,9 @@ extends base.pug
 block content 
     span=errorMessage
     h3 Welcome Upload Video 
-    form(method="POST")
+    form(method="POST", enctype = "multipart/form-data")
+        label(for="video") Video 
+        input(type="file", name="video", id="video", accept="video/*", required)
         input(name="title", placeholder="Title", required, type="text")
         input(name="description", placeholder="Description", required, type="text")
         input(name="hashtags", placeholder="Hashtags, Seperated by commoma", required, type="text")

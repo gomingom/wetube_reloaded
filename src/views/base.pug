@@ -13,9 +13,13 @@ html(lang="ko")
                         a(href="/") Home 
                     if loggedIn 
                         li 
-                            a(href="/logout") Log Out
+                            a(href="/videos/upload") Upload Video
                         li 
-                            a(href="/my-profile") #{loggedInUser.name} Profile
+                            a(href=`/users/${loggedInUser._id}`) #{loggedInUser.name} Profile
+                        li 
+                            a(href="/users/edit-user") Edit User Profile
+                        li 
+                            a(href="/users/logout") Log Out
                     else 
                         li
                             a(href="/join") Join
@@ -23,9 +27,8 @@ html(lang="ko")
                             a(href="/login") Login
                     li 
                         a(href="/search") Search
-                    li 
-                        a(href="/videos/upload") Upload Video
         main 
             block content   
+            block videos
     include partials/footer.pug
         
