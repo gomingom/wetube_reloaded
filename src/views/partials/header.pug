@@ -1,0 +1,29 @@
+header
+    div.header__top
+        a(href="/").header__logo 
+            i.fab.fa-youtube
+            span.header__logo-text WeTube
+    nav
+        ul
+            li
+                a(href="/search")
+                    i.fas.fa-search
+            if loggedIn
+                li
+                    a(href="/videos/upload") Upload Video
+                li
+                    a(href="/users/edit-user") Edit Profile
+                li
+                    a(href="/users/logout")  Log Out
+                li
+                    a(href=`/users/${loggedInUser._id}`)
+                        if !loggedInUser.avatarUrl
+                            span 😆
+                        else 
+                            img(src=loggedInUser.avatarUrl).avatar 
+            else
+                li
+                    a(href="/login") Login                        
+                li
+                    a(href="/join").header__btn Join
+    
