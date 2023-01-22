@@ -1,0 +1,43 @@
+#videoContainer {
+  width: 100%;
+  position: relative;
+  video {
+    width: 100%;
+  }
+  #videoControls {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    &.showing {
+      opacity: 1;
+    }
+    align-items: center;
+    width: 95%;
+    bottom: 18px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    border-radius: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    background-color: #0f1117;
+    display: flex;
+    justify-content: space-between;
+    span {
+      color: white;
+      background: none;
+      border: none;
+    }
+    #playBtn {
+      margin-left: 20px;
+    }
+    #fullScreen {
+      margin-right: 20px;
+    }
+    #timeLine {
+      width: 60%;
+    }
+  }
+}
+#videoDescription {
+}

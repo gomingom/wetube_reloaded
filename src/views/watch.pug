@@ -1,20 +1,22 @@
 extends base.pug
 
 block content
-    div#videoContainer
-        video(src="/" + video.videoUrl, controls)
+    div#videoContainer(data-id=video._id)
+        video(src="/" + video.videoUrl)
         div#videoControls
-            button#playBtn Play
-            button#muteBtn Mute
-            input(type="range", step="0.1", min="0", max="1", value="0.5")#volume
+            span#playBtn
+                i.fas.fa-play
             div#time
                 span#currentTime 00:00:00
                 span  / 
                 span#totalTime 00:00:00
             input(type="range", value="0",step="1", min="0")#timeLine
-        div
-            button#fullScreen Enter Full Screen
-    div
+            input(type="range", step="0.1", min="0", max="1", value="0.5")#volume
+            span#muteBtn
+                i.fas.fa-volume-high
+            span#fullScreen
+                i.fas.fa-expand
+    div#videoDescription
         p=video.description
         small=video.createdAt
         br
